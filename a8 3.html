@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Repeat Hello</title>
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 2em;
+      text-align: center;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+  <div id="result"></div>
+
+  <script>
+    window.onload = function() {
+      let input = prompt("How many times to repeat 'hello'?");
+      let count = parseInt(input);
+
+      if (!isNaN(count) && count > 0) {
+        let message = "hello ".repeat(count);
+        document.getElementById('result').innerText = message;
+      } else {
+        document.getElementById('result').innerText = "Invalid input.";
+      }
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grade Result</title>
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+  <div id="result"></div>
+
+  <script>
+    function getGrade(marks) {
+      if (marks >= 90) return 'A';
+      else if (marks >= 80) return 'B';
+      else if (marks >= 70) return 'C';
+      else if (marks >= 60) return 'D';
+      else return 'F';
+    }
+
+    window.onload = function() {
+      let input = prompt("Enter your marks (0-100):");
+      let marks = parseInt(input);
+
+      if (!isNaN(marks) && marks >= 0 && marks <= 100) {
+        let grade = getGrade(marks);
+        document.getElementById('result').innerText = `Grade: ${grade}`;
+      } else {
+        document.getElementById('result').innerText = "Invalid input. Please refresh and try again.";
+      }
+    }
+  </script>
+</body>
+</html>

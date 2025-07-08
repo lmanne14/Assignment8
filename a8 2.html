@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Positive or Negative</title>
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+  <div id="result"></div>
+
+  <script>
+    window.onload = function() {
+      let input = prompt("Enter a number:");
+      let num = parseFloat(input);
+
+      if (isNaN(num)) {
+        document.getElementById('result').innerText = "Invalid input.";
+      } else if (num > 0) {
+        document.getElementById('result').innerText = "The number is Positive.";
+      } else if (num < 0) {
+        document.getElementById('result').innerText = "The number is Negative.";
+      } else {
+        document.getElementById('result').innerText = "The number is Zero.";
+      }
+    };
+  </script>
+</body>
+</html>
